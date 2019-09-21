@@ -1,4 +1,6 @@
 <nav class="navbar">
-    <span>{{nombreUsuario}}</span>
-    <button class="btn btn-danger" (click)="logout()">Logout</button>
+    <button class="btn btn-primary" (click)="logout()">Logout</button>
+    <span *ngIf="infoHeader">ID: {{infoHeader.idPost}}</span>
+    <span *ngIf="infoHeader && infoHeader.commentsLength">Total: {{infoHeader.commentsLength}}</span>
+    <div>{{nombreUsuario}}</div>
 </nav>

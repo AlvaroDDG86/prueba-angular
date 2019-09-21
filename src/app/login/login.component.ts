@@ -32,7 +32,14 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.loginForm.value);
-    this.authService.login(this.loginForm.value);
-    this.router.navigate(['dashboard', 'posts']);
+    this.authService.login(this.loginForm.value).then(res => {
+      if ( res ) {
+        this.router.navigate(['dashboard', 'posts']);
+      } else {
+        console.log('No se ha podido loggear');
+      }
+    }).catch(error => {
+      console.log(error);
+    });
   }
 }

@@ -16,11 +16,16 @@ export class AuthService {
     }
   }
 
-  login(usuario: Usuario) {
-    this.rol = usuario.isAdmin ? ADMIN : NORMAL;
-    localStorage.setItem(USUARIO, JSON.stringify(usuario));
-    localStorage.setItem(LOGGED, '1');
-    this.loggeado.next(true);
+  login(usuario: Usuario): Promise<boolean> { // creamos una promesa para simular una llamada al API y recoger el token...
+    return new Promise((resolve, reject) => {
+      this.rol = usuario.isAdmin ? ADMIN : NORMAL;
+      localStorage.setItem(USUARIO, JSON.stringify(usuario));
+      localStorage.setItem(LOGGED, '1');
+      this.loggeado.next(true);
+      setTimeout(() => {
+        resolve(true);
+      }, 1000);
+    });
   }
 
   logout() {

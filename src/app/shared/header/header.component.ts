@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { InfoHeader } from 'src/app/modelos/infoheader';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() infoHeader: InfoHeader;
+
   nombreUsuario: string;
   constructor(private authService: AuthService, private router: Router) { }
 

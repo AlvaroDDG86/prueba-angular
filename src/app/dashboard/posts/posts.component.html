@@ -4,3 +4,9 @@
         <p class="card-text">{{post.body}}</p>
     </div>
 </div>
+<div class="card" *ngIf="posts.length == 0" (click)="showPost(post.id)">
+    <div class="card-body">
+        <h5 class="card-title">Título</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deserunt est aliquid eos, temporibus quos cumque iure maiores veritatis consectetur.</p>
+    </div>
+</div>

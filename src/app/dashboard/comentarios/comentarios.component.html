@@ -1,8 +1,10 @@
-<div class="row">
-    <div class="form-group mx-sm-3 mb-2">
-      <input type="number" #comentario class="form-control" id="textoBusqueda" placeholder="Posts a buscar">
+<div class="form-row no-margin">
+    <div class="col">
+        <input type="number" #comentario class="form-control" id="textoBusqueda" placeholder="Posts a buscar">
     </div>
-    <button type="button" (click)="buscarComentarios(comentario.value)" class="btn btn-primary mb-2">Buscar</button>
+    <div class="col">
+        <button type="button" (click)="buscarComentarios(comentario.value)" class="btn btn-primary mb-2">Buscar</button>
+    </div>
 </div>
 <hr />
 <div class="card" *ngFor="let comentario of comentarios">
@@ -10,5 +12,12 @@
         <h5 class="card-title">{{comentario.name}} </h5>
         <p class="font-weight-light font-italic">{{comentario.email}}</p>
         <p class="card-text">{{comentario.body}}</p>
+    </div>
+</div>
+<div class="card" *ngIf="comentarios.length == 0">
+    <div class="card-body">
+        <h5 class="card-title">Título </h5>
+        <p class="font-weight-light font-italic">email</p>
+        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi aspernatur totam dolore illo, laborum possimus quae ea corrupti rerum.</p>
     </div>
 </div>

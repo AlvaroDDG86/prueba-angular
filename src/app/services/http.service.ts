@@ -25,4 +25,8 @@ export class HttpService {
   getComentsByPost(id: number): Observable<any> {
     return this.httpClient.get(`${ENDPOIND}/comments?postId=${id}`);
   }
+
+  deletePost(id: number): Observable<any> {
+    return this.httpClient.delete(`${ENDPOIND}/posts/${id}`);
+  }
 }

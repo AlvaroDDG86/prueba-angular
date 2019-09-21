@@ -15,6 +15,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { LayoutComponent } from './dashboard/layout/layout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './dashboard/footer/footer.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     SidebarComponent,
     PostsComponent,
-    LayoutComponent
+    LayoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
