@@ -6,6 +6,7 @@ import { AuthGuard } from '../guards/auth-guard.service';
 import { RolesService } from '../guards/roles.service';
 import { ADMIN } from '../constantes/constantes';
 import { PostComponent } from './post/post.component';
+import { NuevoPostComponent } from './nuevo-post/nuevo-post.component';
 
 export const dashboardRoutes: Routes = [
   {
@@ -16,6 +17,7 @@ export const dashboardRoutes: Routes = [
       { path: '', redirectTo: 'posts', pathMatch: 'full'},
       { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
       { path: 'post/:id', component: PostComponent, canActivate: [AuthGuard]},
+      { path: 'nuevo', component: NuevoPostComponent, canActivate: [AuthGuard]},
       {
         path: 'comentarios',
         component: ComentariosComponent,

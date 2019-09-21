@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   usuario: Usuario = {
     nombre: '',
     password: '',
-    isAdmin: false
+    isAdmin: false,
+    id: 1
   };
   loginForm = new FormGroup({
     nombre: new FormControl(this.usuario.nombre, [
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl(this.usuario.password, [
       Validators.required
     ]),
-    isAdmin: new FormControl(this.usuario.isAdmin)
+    isAdmin: new FormControl(this.usuario.isAdmin),
+    id: new FormControl(this.usuario.id)
   });
   constructor(private authService: AuthService, private router: Router, private toast: ToastService) { }
 
@@ -31,8 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.loginForm.value);
     this.authService.login(this.loginForm.value).then(res => {
       if ( res ) {
         this.router.navigate(['dashboard', 'posts']);

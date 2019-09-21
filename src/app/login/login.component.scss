@@ -1,16 +1,24 @@
 @import './../../variables.scss';
 
-h5{
-    color: $b;
+html{
+    background-attachment: $a;
+}
+
+h1{
+    color: $a;
 }
 
 .container {
-    background-color: $a;
+    background-color: $d;
     height: 100%;
 }
 
+label {
+    color: $b;
+}
+
 form {
-    background-color: $c;
+    background-color: $a;
     padding: 15px;
     border-radius: 5px;
 }

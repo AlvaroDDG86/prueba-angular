@@ -26,9 +26,10 @@ export class PostComponent implements OnInit {
           idPost: this.id
         };
         this.postLoaded.emit(infoHeader);
+      }, error => {
+        console.log(error);
       });
     }, error => {
-      this.toast.show(error.toString(), 'Error Post', 2);
       console.log(error);
     });
   }

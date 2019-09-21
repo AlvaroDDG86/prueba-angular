@@ -43,8 +43,7 @@ export class ComentariosComponent implements OnInit {
         };
         this.postFiltered.emit(infoHeader);
       } else {
-        this.toast.show('No se han ecnontrado comentarios para el post ' + value, 'Error Comentarios', 3);
-        console.log('No se han ecnontrado comentarios para el post ' + value);
+        this.toast.show('No se han ecnontrado comentarios para el post ' + value, '', 3);
       }
     }, error => {
       this.toast.show(error.toString(), 'Error Comentarios', 2);

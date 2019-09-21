@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ENDPOIND } from '../constantes/constantes';
 import { Observable } from 'rxjs';
+import { Post } from '../modelos/post';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,9 @@ export class HttpService {
 
   deletePost(id: number): Observable<any> {
     return this.httpClient.delete(`${ENDPOIND}/posts/${id}`);
+  }
+
+  addPost(post: Post): Observable<any> {
+    return this.httpClient.post(`${ENDPOIND}/posts`, post);
   }
 }

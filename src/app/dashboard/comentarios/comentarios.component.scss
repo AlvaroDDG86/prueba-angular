@@ -1,8 +1,6 @@
 @import './../../../variables.scss';
 .card {
-    padding: 5px;
     border: solid 2px $b;
-    margin: 3px;
 }
 
 .no-margin{
@@ -10,5 +8,9 @@
 }
 
 h3 {
+    color: $a;
+}
+
+.card-title {
     color: $a;
 }
