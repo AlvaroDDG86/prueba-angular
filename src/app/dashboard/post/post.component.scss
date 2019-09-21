@@ -1,5 +1,7 @@
+@import './../../../variables.scss';
+
 .card {
     padding: 5px;
-    border: solid 2px rgb(255, 0, 242);
+    border: solid 2px $b;
     margin: 3px;
 }

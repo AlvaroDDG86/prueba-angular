@@ -1,8 +1,10 @@
+@import './../../../variables.scss';
+
 .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: rgb(70, 73, 255);
+    background: $a;
     margin-left: -5px;
     padding: 5px;
     text-align: right;

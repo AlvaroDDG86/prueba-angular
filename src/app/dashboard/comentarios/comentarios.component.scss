@@ -1,9 +1,14 @@
+@import './../../../variables.scss';
 .card {
     padding: 5px;
-    border: solid 2px rgb(0, 89, 255);
+    border: solid 2px $b;
     margin: 3px;
 }
 
 .no-margin{
     margin: 0;
+}
+
+h3 {
+    color: $a;
 }
