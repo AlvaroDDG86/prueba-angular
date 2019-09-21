@@ -1,14 +1,15 @@
-#aside {
-    width: 160px;
-    float: left;
-    background-color: rgb(255, 0, 0);
-    height: 100%;
-}
-
-:host {
-    height: 100%;
-}
-
 .list-group-item {
     cursor: pointer;
+}
+
+.sidebar{
+    position: fixed;
+    top: 54px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: red;
 }

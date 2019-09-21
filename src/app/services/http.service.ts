@@ -18,7 +18,11 @@ export class HttpService {
     return this.httpClient.get(`${ENDPOIND}/posts/${id}`);
   }
 
-  getComents() {
+  getAllComents(): Observable<any> {
+    return this.httpClient.get(`${ENDPOIND}/comments`);
+  }
 
+  getComentsByPost(id: number): Observable<any> {
+    return this.httpClient.get(`${ENDPOIND}/comments?postId=${id}`);
   }
 }
