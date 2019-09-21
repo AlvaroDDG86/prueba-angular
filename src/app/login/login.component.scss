@@ -1,0 +1,16 @@
+@import './../../variables.scss';
+
+h5{
+    color: $b;
+}
+
+.container {
+    background-color: $a;
+    height: 100%;
+}
+
+form {
+    background-color: $c;
+    padding: 15px;
+    border-radius: 5px;
+}

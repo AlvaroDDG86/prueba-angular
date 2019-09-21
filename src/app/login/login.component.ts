@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Usuario } from '../modelos/usuario';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
     ]),
     isAdmin: new FormControl(this.usuario.isAdmin)
   });
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private toast: ToastService) { }
 
   ngOnInit() {
   }
@@ -36,9 +37,11 @@ export class LoginComponent implements OnInit {
       if ( res ) {
         this.router.navigate(['dashboard', 'posts']);
       } else {
+        this.toast.show('No se ha podido loggear', 'Error Login', 2);
         console.log('No se ha podido loggear');
       }
     }).catch(error => {
+      this.toast.show('No se ha podido loggear', 'Error Login', 2);
       console.log(error);
     });
   }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { Post } from 'src/app/modelos/post';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-posts',
@@ -10,10 +11,16 @@ import { Router } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
-  constructor(private http: HttpService, private router: Router) { }
+  idPostEliminar: number;
+  constructor(private http: HttpService, private router: Router, private toast: ToastService, private arouter: ActivatedRoute) { }
 
   ngOnInit() {
     this.getPost();
+    this.arouter.params.subscribe(params => {
+      if (params.idEliminar) {
+        this.deletePostFromArray(params.idEliminar);
+      }
+    });
   }
 
   getPost() {
@@ -22,16 +29,12 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  addPost() {
-
-  }
-
-  deletePost() {
-
-  }
-
   showPost(id: number) {
     this.router.navigate(['dashboard', 'post', id]);
+  }
+
+  deletePostFromArray(id) {
+    
   }
 
 }

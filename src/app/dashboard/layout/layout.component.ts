@@ -16,7 +16,8 @@ export class LayoutComponent implements OnInit {
   }
 
   onActivate(componentReference) {
-    console.log(componentReference);
+    this.infoHeader = null;
+    this.idPostEliminar = null;
     if (componentReference.postFiltered) {
       componentReference.postFiltered.subscribe(data => {
         this.infoHeader = data;
@@ -26,9 +27,6 @@ export class LayoutComponent implements OnInit {
         this.infoHeader = data;
         this.idPostEliminar = this.infoHeader.idPost;
       });
-    } else {
-      this.infoHeader = null;
-      this.idPostEliminar = null;
     }
  }
 }

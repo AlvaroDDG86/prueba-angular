@@ -1,5 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
+
 html, body {
   height: 100%;
   margin: 0;
+}
+
+.btn {
+  color: white !important;
+}
+
+.btn-app-primary {
+  background-color: #536eca !important;
+  border-color: #344fa8 !important;
+}
+.btn-app-success {
+  background-color: #036e11 !important;
+  border-color: #016d1c !important;
+}
+.btn-app-danger {
+  background-color: #960000 !important;
+  border-color: #880202 !important;
 }

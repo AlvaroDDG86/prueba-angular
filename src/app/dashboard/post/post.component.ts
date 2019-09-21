@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { Post } from 'src/app/modelos/post';
 import { InfoHeader } from 'src/app/modelos/infoheader';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-post',
@@ -13,7 +14,8 @@ export class PostComponent implements OnInit {
   id: number;
   post: Post;
   @Output() postLoaded: EventEmitter<InfoHeader> = new EventEmitter();
-  constructor(private http: HttpService, private aRouter: ActivatedRoute, private router: Router) { }
+  @Output() postDeleted: EventEmitter<number> = new EventEmitter();
+  constructor(private http: HttpService, private aRouter: ActivatedRoute, private router: Router, private toast: ToastService) { }
 
   ngOnInit() {
     this.aRouter.params.subscribe(params => {
@@ -26,6 +28,7 @@ export class PostComponent implements OnInit {
         this.postLoaded.emit(infoHeader);
       });
     }, error => {
+      this.toast.show(error.toString(), 'Error Post', 2);
       console.log(error);
     });
   }
