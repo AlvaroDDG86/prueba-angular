@@ -4,13 +4,15 @@
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~ngx-toastr/toastr-bs4-alert';
-
+@import './variables.scss';
 
 html, body {
   height: 100%;
   margin: 0;
 }
-
+.container {
+  font-family: 'Ubuntu', sans-serif;
+}
 .btn {
   color: white !important;
 }
@@ -31,4 +33,24 @@ html, body {
 .card {
   padding: 5px;
   margin: 3px;
+}
+
+h3 {
+  color: $a;
+}
+
+.card-title {
+  color: $a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Anton', sans-serif;
+}
+
+p {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.color-b {
+  color: $b;
 }
