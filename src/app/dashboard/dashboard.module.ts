@@ -5,7 +5,7 @@ import { dashboardRoutes } from './dashboard.routes';
 import { AuthGuard } from '../guards/auth-guard.service';
 import { RolesService } from '../guards/roles.service';
 import { NuevoPostComponent } from './nuevo-post/nuevo-post.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forChild(dashboardRoutes),
   ],
   providers: [AuthGuard, RolesService],

@@ -6,3 +6,17 @@
     margin: 3px;
     background-color: #f64c720a;
 }
+
+.comments {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.comment {
+    width: 250px;
+    border: solid 1px black;
+    box-shadow: 3px 3px 5px gray;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 3px;
+}

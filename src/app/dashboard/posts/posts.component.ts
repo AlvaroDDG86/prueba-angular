@@ -53,7 +53,7 @@ export class PostsComponent implements OnInit {
   }
 
   showPost(id: number) {
-    this.router.navigate(['dashboard', 'post', id]);
+    this.router.navigate(['dashboard', 'post', id, -1]);
   }
 
   deletePostFromArray(id: number) {

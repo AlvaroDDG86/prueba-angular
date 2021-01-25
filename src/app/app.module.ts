@@ -22,7 +22,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AuthInterceptorService } from './services/interceptor.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ModalModule.forRoot(),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [
     {

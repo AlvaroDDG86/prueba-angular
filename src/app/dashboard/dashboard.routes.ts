@@ -16,10 +16,10 @@ export const dashboardRoutes: Routes = [
     children: [
       { path: '', redirectTo: 'posts', pathMatch: 'full'},
       { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
-      { path: 'post/:id', component: PostComponent, canActivate: [AuthGuard]},
+      { path: 'post/:id/:comment', component: PostComponent, canActivate: [AuthGuard]},
       { path: 'nuevo', component: NuevoPostComponent, canActivate: [AuthGuard]},
       {
-        path: 'comentarios',
+        path: 'comentarios/:id',
         component: ComentariosComponent,
         canActivate: [RolesService],
         data: {rol: ADMIN}

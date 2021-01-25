@@ -1,6 +1,5 @@
 <h3>Posts - <span class="font-weight-bold color-b">{{posts.length}}</span></h3>
-
-<div class="card" *ngFor="let post of posts" (click)="showPost(post.id)">
+<div class="card" *ngFor="let post of posts | paginate: { itemsPerPage: 6, currentPage: p }" (click)="showPost(post.id)">
     <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">{{post.body}}</p>
@@ -12,3 +11,4 @@
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deserunt est aliquid eos, temporibus quos cumque iure maiores veritatis consectetur.</p>
     </div>
 </div>
+<pagination-controls *ngIf="posts.length > 0" (pageChange)="p = $event"></pagination-controls>

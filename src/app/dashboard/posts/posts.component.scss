@@ -4,3 +4,17 @@
     border: solid 2px $c;
     background-color: #f64c720a;
 }
+
+.uno {
+    height: 100px;
+    border: solid 2px orange;
+    &-rojo {
+        background-color: red;
+    }
+    &-azul {
+        background-color: blue;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}

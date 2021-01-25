@@ -4,6 +4,7 @@ import { Comentario } from 'src/app/modelos/comentario';
 import { EventEmitter } from '@angular/core';
 import { InfoHeader } from 'src/app/modelos/infoheader';
 import { ToastService } from 'src/app/services/toast.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comentarios',
@@ -12,12 +13,25 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class ComentariosComponent implements OnInit {
   comentarios: Comentario[] = [];
+  id: number = null;
   @Output() postFiltered: EventEmitter<InfoHeader> = new EventEmitter();
 
-  constructor(private http: HttpService, private toast: ToastService) { }
+  constructor(private http: HttpService, private toast: ToastService, private router: Router, private aRouter: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getComentarios();
+    this.aRouter.params.subscribe(params => {
+      this.id = parseInt(params.id);
+      if (this.id !== 0) {
+        this.buscarComentarios(this.id);
+      } else {
+        this.id = null;
+        this.getComentarios();
+      }
+    });
+  }
+
+  showPost(id: number) {
+    this.router.navigate(['dashboard', 'post', id, this.id ? this.id : 0]);
   }
 
   getComentarios() {
@@ -43,7 +57,7 @@ export class ComentariosComponent implements OnInit {
         };
         this.postFiltered.emit(infoHeader);
       } else {
-        this.toast.show('No se han ecnontrado comentarios para el post ' + value, '', 3);
+        this.toast.show('No se han enontrado comentarios para el post ' + value, '', 3);
       }
     }, error => {
       this.toast.show(error.toString(), 'Error Comentarios', 2);
