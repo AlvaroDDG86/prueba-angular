@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
   nuevoPost: Post;
+  p: number = 1;
   idPostEliminar: number;
   constructor(private http: HttpService, private router: Router, private toast: ToastService, private acciones: AccionesService) { }
 

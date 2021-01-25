@@ -14,6 +14,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ComentariosComponent implements OnInit {
   comentarios: Comentario[] = [];
   id: number = null;
+  p: number = 1;
   @Output() postFiltered: EventEmitter<InfoHeader> = new EventEmitter();
 
   constructor(private http: HttpService, private toast: ToastService, private router: Router, private aRouter: ActivatedRoute) { }
